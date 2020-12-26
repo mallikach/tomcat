@@ -9,7 +9,7 @@ pipeline {
    }
 
    stages {
-      stage('Code Checkout DEF') {
+      stage('Code Checkout') {
          steps {
             // Get some code from a GitHub repository
             git 'https://github.com/mallikach/tomcat.git'   
@@ -18,7 +18,7 @@ pipeline {
       }
       
       
-      stage('Code Testing DEF') {
+      stage('Code Testing') {
          steps {
            
             // To run Maven on a Windows agent, use
@@ -26,7 +26,7 @@ pipeline {
          }
       }
          
-          stage('Code Build DEF') {
+          stage('Code Build') {
          steps {
            
             // To run Maven on a Windows agent, use
@@ -35,11 +35,11 @@ pipeline {
 
       }
       
-      stage('Code Deploy DEF') {
+      stage('Code Deploy') {
          steps {
         
             // To run Maven on a Windows agent, use
-           bat label: '', script: 'copy /Y target\\satyam-1.0.war  C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace' 
+           bat label: '', script: 'copy /Y target\\mallikatest-1.0.war  C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace' 
             //E:\\apache-tomcat-9.0.16-windows-x64\\apache-tomcat-9.0.16\\webapps'
          }
 
