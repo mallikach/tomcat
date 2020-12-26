@@ -9,7 +9,7 @@ pipeline {
    }
 
    stages {
-      stage('Code Checkout') {
+      stage('Code Checkout DEF') {
          steps {
             // Get some code from a GitHub repository
             git 'https://github.com/mallikach/tomcat.git'   
@@ -18,7 +18,7 @@ pipeline {
       }
       
       
-      stage('Code Testing') {
+      stage('Code Testing DEF') {
          steps {
            
             // To run Maven on a Windows agent, use
@@ -26,7 +26,7 @@ pipeline {
          }
       }
          
-          stage('Code Build') {
+          stage('Code Build DEF') {
          steps {
            
             // To run Maven on a Windows agent, use
@@ -35,7 +35,7 @@ pipeline {
 
       }
       
-      stage('Code Deploy') {
+      stage('Code Deploy DEF') {
          steps {
         
             // To run Maven on a Windows agent, use
